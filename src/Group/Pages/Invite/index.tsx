@@ -8,8 +8,10 @@ import { groupSlice } from "../../store/slice";
 import {
   selectGroupId,
   selectGroupUrl,
+  selectGroupName,
   selectGroupLoading,
 } from "../../store/selectors";
+import axios from "axios";
 
 import "./styles.css";
 
@@ -24,19 +26,27 @@ export const InvitePage = () => {
   const dispatch = useDispatch();
   const groupId = useSelector(selectGroupId);
   const groupUrl = useSelector(selectGroupUrl);
+  const groupName = useSelector(selectGroupName);
   const groupLoading = useSelector(selectGroupLoading);
 
   const submit = async () => {
-    dispatch(groupSlice.actions.requestPostGroup());
+    try {
+      dispatch(groupSlice.actions.requestPostGroup());
 
-    setTimeout(() => {
+      const response = await axios.post(
+        "https://bohobackend.herokuapp.com/api/group/create",
+        { group_name: groupName }
+      );
+
       dispatch(
         groupSlice.actions.responsePostGroup({
-          group_id: "1",
-          group_url: "https://11",
+          group_id: response.body.group_id,
+          group_url: response.body.group_join_code,
         })
       );
-    }, 3000);
+    } catch (error) {
+      dispatch(groupSlice.actions.errorPostGroup());
+    }
   };
 
   if (groupLoading) {

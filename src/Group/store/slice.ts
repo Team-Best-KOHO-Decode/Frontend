@@ -4,12 +4,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface GroupState {
   group_id: string | null;
   group_url: string | null;
+  group_name: string | null;
   loading: boolean;
 }
 
 const initialState: GroupState = {
   group_id: null,
   group_url: null,
+  group_name: null,
   loading: false,
 };
 
@@ -17,10 +19,9 @@ export const groupSlice = createSlice({
   name: "group",
   initialState,
   reducers: {
-    // POST /group
-    // * request POST /group
-    // * response POST /group
-    // * error POST /group
+    updateGroupName: (state, action: PayloadAction<string>) => {
+      state.name = action.payload;
+    },
     requestPostGroup: (state) => {
       state.loading = true;
     },
