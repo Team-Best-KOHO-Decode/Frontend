@@ -4,14 +4,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface GroupState {
   group_id: string | null;
   group_url: string | null;
-  group_name: string | null;
+  group_name: string;
   loading: boolean;
 }
 
 const initialState: GroupState = {
   group_id: null,
   group_url: null,
-  group_name: null,
+  group_name: "",
   loading: false,
 };
 
