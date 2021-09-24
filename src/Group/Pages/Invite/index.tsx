@@ -1,16 +1,15 @@
-import { ParagraphLarge, TitleLarge } from "../../Components/Typography";
-import { Avatar } from "../../Components/Avatar";
-import Button from "../../Components/Button";
-import { ReactComponent as PlusIcon } from "../../assets/icons/plus.svg";
-import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
+import { ParagraphLarge, TitleLarge } from "../../../Components/Typography";
+import { Avatar } from "../../../Components/Avatar";
+import Button from "../../../Components/Button";
+import { ReactComponent as PlusIcon } from "../../../assets/icons/plus.svg";
+import { ReactComponent as Logo } from "../../../assets/icons/logo.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { groupSlice } from "../store/slice";
+import { groupSlice } from "../../store/slice";
 import {
   selectGroupId,
   selectGroupUrl,
   selectGroupLoading,
-} from "../store/selectors";
-import axios from "axios";
+} from "../../store/selectors";
 
 import "./styles.css";
 
@@ -49,6 +48,7 @@ export const InvitePage = () => {
       <TitleLarge text="Invite your friends" />
       <ParagraphLarge text="Invitation Link" />
       <ParagraphLarge text="Add Members" />
+
       {groupId}
       {groupUrl}
 
