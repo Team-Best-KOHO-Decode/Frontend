@@ -52,7 +52,9 @@ export const CreatePage = () => {
         <Camera />
       </div>
 
-      <ParagraphMedium text="Group name" className="create-page-group-name" />
+      <div className="create-page-group-name">
+        <ParagraphMedium text="Group name" />
+      </div>
       <input
         onChange={onChange}
         value={groupName}
