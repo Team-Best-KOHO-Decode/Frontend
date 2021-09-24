@@ -31,7 +31,7 @@ function GroupPlanSummaryPage() {
       .catch(() => {
         dispatch(groupSlice.actions.errorGetGroup());
       });
-  }, []);
+  }, [dispatch, id]);
 
   if (groupLoading) {
     return <p>Loading...</p>;

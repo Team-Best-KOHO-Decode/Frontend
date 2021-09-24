@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 import {
   selectGroupId,
   selectGroupUrl,
-  selectGroupName,
   selectGroupLoading,
 } from "../../store/selectors";
 
