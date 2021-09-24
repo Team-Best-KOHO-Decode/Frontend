@@ -1,0 +1,21 @@
+.avatar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.avatar {
+  border-radius: 50%;
+  background-color: #c4c4c4;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-image {
+  width: 57px;
+  height: 57px;
+}
