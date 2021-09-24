@@ -3,7 +3,7 @@ import "./styles.css";
 
 interface Props {
   text: string;
-  color: "primary" | "secondary";
+  color: "primary" | "secondary" | "tertiary";
 }
 
 function Button(props: Props) {
