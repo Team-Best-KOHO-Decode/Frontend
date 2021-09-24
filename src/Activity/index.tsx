@@ -44,7 +44,7 @@ function ActivityPage() {
           />
         ))}
       </div>
-      <Button text="Hello" color="primary" />
+      <Button text="Submit" color="primary" />
     </div>
   );
 }
