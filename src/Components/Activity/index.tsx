@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./styles.css";
 
 interface Props {
@@ -8,11 +8,7 @@ interface Props {
 }
 
 function Activity(props: Props) {
-  const {
-    name,
-    type,
-    price,
-  } = props;
+  const { name, type, price } = props;
 
   return (
     <div className="card">
