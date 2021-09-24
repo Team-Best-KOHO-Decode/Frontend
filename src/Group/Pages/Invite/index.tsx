@@ -4,8 +4,7 @@ import { Avatar } from "../../../Components/Avatar";
 import Button from "../../../Components/Button";
 import { ReactComponent as PlusIcon } from "../../../assets/icons/plus.svg";
 import { ReactComponent as Logo } from "../../../assets/icons/logo.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { groupSlice } from "../../store/slice";
+import { useSelector } from "react-redux";
 import {
   selectGroupId,
   selectGroupUrl,
@@ -24,13 +23,14 @@ export const InvitePage = () => {
   ];
   const history = useHistory();
 
-  const dispatch = useDispatch();
   const groupId = useSelector(selectGroupId);
   const groupUrl = useSelector(selectGroupUrl);
   const groupName = useSelector(selectGroupName);
   const groupLoading = useSelector(selectGroupLoading);
 
-  const done = () => {};
+  const done = () => {
+    history.push("/group/create");
+  };
 
   if (groupLoading) {
     return <p>Loading...</p>;
@@ -42,6 +42,8 @@ export const InvitePage = () => {
       <ParagraphLarge text="Invitation Link" />
       <ParagraphLarge text="Add Members" />
 
+      <ParagraphLarge text={groupId} />
+      <ParagraphLarge text={groupName} />
       <ParagraphLarge text={groupUrl} />
 
       <div className="invite-page-avatars">
