@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../Components/Button";
 import Activity from "../Components/Activity";
 
