@@ -8,7 +8,6 @@ import { useSelector } from "react-redux";
 import {
   selectGroupId,
   selectGroupUrl,
-  selectGroupName,
   selectGroupLoading,
 } from "../../store/selectors";
 
@@ -23,13 +22,12 @@ export const InvitePage = () => {
   ];
   const history = useHistory();
 
-  const groupId = useSelector(selectGroupId);
   const groupUrl = useSelector(selectGroupUrl);
-  const groupName = useSelector(selectGroupName);
+  const groupId = useSelector(selectGroupId);
   const groupLoading = useSelector(selectGroupLoading);
 
   const done = () => {
-    history.push("/group/create");
+    history.push(`/group/${groupId}`);
   };
 
   if (groupLoading) {
@@ -42,8 +40,6 @@ export const InvitePage = () => {
       <ParagraphLarge text="Invitation Link" />
       <ParagraphLarge text="Add Members" />
 
-      <ParagraphLarge text={groupId} />
-      <ParagraphLarge text={groupName} />
       <ParagraphLarge text={groupUrl} />
 
       <div className="invite-page-avatars">
