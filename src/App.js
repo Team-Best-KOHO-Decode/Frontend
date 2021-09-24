@@ -5,6 +5,7 @@ import Activity from "./Activity";
 import TopVotePage from "./TopVote";
 import Setup from "./Setup";
 import GroupPlanSummaryPage from "./GroupPlanSummary";
+import { ReactComponent as Logo } from "./assets/icons/logo.svg";
 
 const App = () => {
   return (
@@ -15,7 +16,7 @@ const App = () => {
           <Link to="/group/invite">Invite | </Link>
           <Link to="/activity">Activity | </Link>
           <Link to="/topvote">Top Vote | </Link>
-          <Link to="/plans">Plans|</Link>
+          <Link to="/plans">Plans | </Link>
           <Link to="/setup">Setup</Link>
         </ul>
         <div className="header">

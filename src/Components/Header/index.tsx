@@ -11,7 +11,7 @@ function Header(props: Props) {
   return (
     <div>
       <h1 className="title">{title}</h1>
-      <p className="subtitle">{subtitle}</p>
+      <p className="">{subtitle}</p>
     </div>
   );
 }

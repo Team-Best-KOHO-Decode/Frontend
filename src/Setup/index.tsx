@@ -3,6 +3,7 @@ import Header from "../Components/Header";
 import Button from "../Components/Button";
 import Subtitle from "../Components/Subtitle";
 import React, { useState } from "react";
+import { ReactComponent as SplashImage } from "../assets/icons/3char.svg";
 
 function Setup() {
   const [rating, setRating] = useState(0);
@@ -15,7 +16,9 @@ function Setup() {
         subtitle="Choose a time, location and activity to vote on"
       />
       <div className="items-center">
-        <img className="img"></img>
+        {/* <img className="img"> */}
+        <SplashImage />
+        {/* </img> */}
       </div>
       <Button text="GOT IT" color="primary" />
     </div>
@@ -38,7 +41,7 @@ function Setup() {
                 onMouseEnter={() => setHover(index)}
                 onMouseLeave={() => setHover(rating)}
               >
-                <p className="dollar-sign">$</p>
+                <p className="dollar-sign no-margin">$</p>
               </button>
             );
           })}
@@ -56,7 +59,11 @@ function Setup() {
       <Header title="Create a Time" subtitle="Select a time to hangout!" />
       <div>
         <Subtitle text="Time" />
+        <input type="time" />
         <Subtitle text="Date" />
+        <div>
+          <input type="date" />
+        </div>
       </div>
       <Button text="NEXT" color="primary" />
     </div>
