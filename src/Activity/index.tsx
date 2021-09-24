@@ -3,26 +3,39 @@ import Activity from "../Components/ActivityCard";
 import ActivityType from "../Components/ActivityType";
 
 import "./styles.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function ActivityPage() {
   const activityTypes = ["Food", "Entertainment", "Sports"];
-  const activities = [
-    {
-      name: "Mario's",
-      type: "Italian",
-      price: "$$",
-    },
-    {
-      name: "Subway",
-      type: "Fast Food",
-      price: "$",
-    },
-    {
-      name: "Lee Restaurant",
-      type: "Bougie",
-      price: "$$$",
-    },
-  ];
+  // const activities = [
+  //   {
+  //     name: "Mario's",
+  //     type: "Italian",
+  //     price: "$$",
+  //   },
+  //   {
+  //     name: "Subway",
+  //     type: "Fast Food",
+  //     price: "$",
+  //   },
+  //   {
+  //     name: "Lee Restaurant",
+  //     type: "Bougie",
+  //     price: "$$$",
+  //   },
+  // ];
+  const [activities, setActivities] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://bohobackend.herokuapp.com/api/activity/")
+      .then((response) => {
+        setActivities(response.data);
+      });
+  }, []);
+
+  console.log(activities);
 
   return (
     <div className="root">
@@ -39,8 +52,8 @@ function ActivityPage() {
         {activities.map((activity) => (
           <Activity
             name={activity.name}
-            type={activity.type}
-            price={activity.price}
+            type={activity.description}
+            price={activity.cost}
           />
         ))}
       </div>
