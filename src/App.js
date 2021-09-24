@@ -3,8 +3,12 @@ import Dashboard from "./Dashboard";
 import "./App.css";
 import Activity from "./Activity";
 import TopVotePage from "./TopVote";
+<<<<<<< HEAD
 import GroupPlanSummaryPage from "./GroupPlanSummary";
 import { ReactComponent as Logo } from "./assets/icons/logo.svg";
+=======
+import Setup from "./Setup";
+>>>>>>> 0d0d654 (setup screen)
 
 const App = () => {
   return (
@@ -15,12 +19,16 @@ const App = () => {
           <Link to="/group/invite">Invite | </Link>
           <Link to="/activity">Activity | </Link>
           <Link to="/topvote">Top Vote | </Link>
-          <Link to="/plans">Plans</Link>
+          <Link to="/plans">Plans|</Link>
+          <Link to="/setup">Setup</Link>
         </ul>
         <div className="header">
           <Logo />
         </div>
         <Switch>
+          <Route path="/setup">
+            <Setup />
+          </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>
