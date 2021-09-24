@@ -2,15 +2,15 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define a type for the slice state
 interface GroupState {
-  group_id: string | null;
-  group_url: string | null;
+  group_id: string;
+  group_url: string;
   group_name: string;
   loading: boolean;
 }
 
 const initialState: GroupState = {
-  group_id: null,
-  group_url: null,
+  group_id: "",
+  group_url: "",
   group_name: "",
   loading: false,
 };
