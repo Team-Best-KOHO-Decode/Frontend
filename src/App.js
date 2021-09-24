@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { CreatePage, InvitePage } from "./Group/Pages";
+
 import Dashboard from "./Dashboard";
 import "./App.css";
 import Activity from "./Activity";
@@ -11,8 +13,7 @@ const App = () => {
     <div className="App">
       <Router>
         <ul>
-          <Link to="/dashboard">Dashboard | </Link>
-          <Link to="/group/invite">Invite | </Link>
+          <Link to="/group/create">Create | </Link>
           <Link to="/activity">Activity | </Link>
           <Link to="/topvote">Top Vote | </Link>
           <Link to="/plans">Plans</Link>
@@ -23,6 +24,12 @@ const App = () => {
         <Switch>
           <Route path="/dashboard">
             <Dashboard />
+          </Route>
+          <Route path="/group/create">
+            <CreatePage />
+          </Route>
+          <Route path="/group/invite">
+            <InvitePage />
           </Route>
           <Route path="/activity">
             <Activity />

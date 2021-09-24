@@ -1,13 +1,14 @@
 import { ParagraphLarge, TitleLarge } from "../../../Components/Typography";
+import { useHistory } from "react-router-dom";
 import { Avatar } from "../../../Components/Avatar";
 import Button from "../../../Components/Button";
 import { ReactComponent as PlusIcon } from "../../../assets/icons/plus.svg";
 import { ReactComponent as Logo } from "../../../assets/icons/logo.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { groupSlice } from "../../store/slice";
+import { useSelector } from "react-redux";
 import {
   selectGroupId,
   selectGroupUrl,
+  selectGroupName,
   selectGroupLoading,
 } from "../../store/selectors";
 
@@ -20,23 +21,15 @@ export const InvitePage = () => {
     { id: 3, name: "Cuong" },
     { id: 4, name: "Cuong" },
   ];
+  const history = useHistory();
 
-  const dispatch = useDispatch();
   const groupId = useSelector(selectGroupId);
   const groupUrl = useSelector(selectGroupUrl);
+  const groupName = useSelector(selectGroupName);
   const groupLoading = useSelector(selectGroupLoading);
 
-  const submit = async () => {
-    dispatch(groupSlice.actions.requestPostGroup());
-
-    setTimeout(() => {
-      dispatch(
-        groupSlice.actions.responsePostGroup({
-          group_id: "1",
-          group_url: "https://11",
-        })
-      );
-    }, 3000);
+  const done = () => {
+    history.push("/group/create");
   };
 
   if (groupLoading) {
@@ -49,8 +42,9 @@ export const InvitePage = () => {
       <ParagraphLarge text="Invitation Link" />
       <ParagraphLarge text="Add Members" />
 
-      {groupId}
-      {groupUrl}
+      <ParagraphLarge text={groupId} />
+      <ParagraphLarge text={groupName} />
+      <ParagraphLarge text={groupUrl} />
 
       <div className="invite-page-avatars">
         {avatars.map((avatar) => (
@@ -63,7 +57,7 @@ export const InvitePage = () => {
           </div>
         </div>
       </div>
-      <Button color="tertiary" text="Done" onClick={submit} />
+      <Button color="secondary" text="Done" onClick={done} />
 
       <div className="footer">
         <Logo />

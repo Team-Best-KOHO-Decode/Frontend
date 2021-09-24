@@ -13,6 +13,11 @@ export const selectGroupUrl = createSelector(
   (state) => state.group_url
 );
 
+export const selectGroupName = createSelector(
+  selectGroupState,
+  (state) => state.group_name
+);
+
 export const selectGroupLoading = createSelector(
   selectGroupState,
   (state) => state.loading
