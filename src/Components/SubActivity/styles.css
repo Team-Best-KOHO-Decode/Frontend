@@ -1,0 +1,31 @@
+.subActivity {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  margin: 18px;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  height: 85px;
+  width: 150px;
+  background: lightblue;
+  position: relative;
+}
+
+.activityTitle {
+  position: absolute;
+  bottom: 0;
+  height: 65px;
+  width: 150px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+}
+
+.votes {
+  text-align: center;
+  color: #6A6E76;
+}

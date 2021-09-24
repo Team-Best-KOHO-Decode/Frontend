@@ -21,11 +21,15 @@
   margin-bottom: 8px;
 }
 
-.activitesList {
+.activitesTypes {
   display: grid;
   grid-row-gap: 18px;
   grid-template-columns: auto auto;
   justify-content: space-between;
   padding: 0 18px;
   margin-bottom: 28px;
+}
+
+.activitesList {
+  margin-bottom: 32px;
 }
