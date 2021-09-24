@@ -3,12 +3,8 @@ import Dashboard from "./Dashboard";
 import "./App.css";
 import Activity from "./Activity";
 import TopVotePage from "./TopVote";
-<<<<<<< HEAD
-import GroupPlanSummaryPage from "./GroupPlanSummary";
-import { ReactComponent as Logo } from "./assets/icons/logo.svg";
-=======
 import Setup from "./Setup";
->>>>>>> 0d0d654 (setup screen)
+import GroupPlanSummaryPage from "./GroupPlanSummary";
 
 const App = () => {
   return (
