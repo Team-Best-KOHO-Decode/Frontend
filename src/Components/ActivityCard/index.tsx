@@ -11,7 +11,7 @@ interface Props {
 }
 
 function Activity(props: Props) {
-  const { name, type, price, showVote, imgUrl = true } = props;
+  const { name, type, price, showVote = true, imgUrl } = props;
   const [vote, setVote] = useState(false);
 
   const HandlePrice = ["$", "$$", "$$$", "$$$$"];
