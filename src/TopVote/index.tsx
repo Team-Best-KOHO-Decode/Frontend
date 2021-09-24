@@ -12,7 +12,7 @@ function TopVotePage() {
         type="Italian"
         price="$$"
         showVote={false}
-        imgUrl=""
+        imgUrl="https://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg"
       />
       <div className="subActivities">
         <SubActivity name="Subway" voteCount="5" />
