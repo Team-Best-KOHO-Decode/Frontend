@@ -35,6 +35,12 @@
   height: 127px;
 }
 
+.vote-btn {
+  position: absolute;
+  bottom: 33px;
+  right: 19px;
+}
+
 .title {
   font-size: 24px;
   margin-top: 0;
