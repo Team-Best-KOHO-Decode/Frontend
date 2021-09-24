@@ -1,28 +1,46 @@
 import Button from "../Components/Button";
 import Activity from "../Components/ActivityCard";
 import ActivityType from "../Components/ActivityType";
+import { useHistory } from "react-router-dom";
 
 import "./styles.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function ActivityPage() {
   const activityTypes = ["Food", "Entertainment", "Sports"];
-  const activities = [
-    {
-      name: "Mario's",
-      type: "Italian",
-      price: "$$",
-    },
-    {
-      name: "Subway",
-      type: "Fast Food",
-      price: "$",
-    },
-    {
-      name: "Lee Restaurant",
-      type: "Bougie",
-      price: "$$$",
-    },
-  ];
+  const history = useHistory();
+  // const activities = [
+  //   {
+  //     name: "Mario's",
+  //     type: "Italian",
+  //     price: "$$",
+  //   },
+  //   {
+  //     name: "Subway",
+  //     type: "Fast Food",
+  //     price: "$",
+  //   },
+  //   {
+  //     name: "Lee Restaurant",
+  //     type: "Bougie",
+  //     price: "$$$",
+  //   },
+  // ];
+  const [activities, setActivities] = useState([]);
+  const onClick = () => {
+    history.push("/topvote");
+  };
+
+  useEffect(() => {
+    axios
+      .get("https://bohobackend.herokuapp.com/api/activity/")
+      .then((response) => {
+        setActivities(response.data);
+      });
+  }, []);
+
+  console.log(activities);
 
   return (
     <div className="root">
@@ -35,16 +53,27 @@ function ActivityPage() {
           <ActivityType type={type} />
         ))}
       </div>
+
       <div className="activitesList">
-        {activities.map((activity) => (
-          <Activity
-            name={activity.name}
-            type={activity.type}
-            price={activity.price}
-          />
-        ))}
+        {activities.map(
+          (activity: {
+            name: string;
+            description: string;
+            cost: string;
+            image: string;
+          }) => {
+            return (
+              <Activity
+                name={activity.name}
+                type={activity.description}
+                price={activity.cost}
+                imgUrl={activity.image}
+              />
+            );
+          }
+        )}
       </div>
-      <Button text="Submit" color="primary" />
+      <Button text="Submit" color="primary" onClick={onClick} />
     </div>
   );
 }

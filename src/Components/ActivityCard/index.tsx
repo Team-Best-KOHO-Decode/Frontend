@@ -6,21 +6,25 @@ interface Props {
   name: string;
   type: string;
   price: string;
+  imgUrl: string;
   showVote?: boolean;
 }
 
 function Activity(props: Props) {
-  const { name, type, price, showVote = true } = props;
+  const { name, type, price, showVote = true, imgUrl } = props;
   const [vote, setVote] = useState(false);
+
+  const HandlePrice = ["$", "$$", "$$$", "$$$$"];
 
   return (
     <div className="card">
       <div className="content">
-        <div className="img"></div>
+        {/* <div className="img"></div> */}
+        <img src={imgUrl} className="img" alt="" />
         <div className="info">
           <p className="title">{name}</p>
           <p className="subText">{type}</p>
-          <p className="subText">{price}</p>
+          <p className="subText">{HandlePrice[parseInt(price) - 1]}</p>
         </div>
       </div>
       {showVote && (
