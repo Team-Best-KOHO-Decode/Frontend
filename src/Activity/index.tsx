@@ -1,7 +1,6 @@
-import React from "react";
-import Button from "../components/Button";
-import Activity from "../components/Activity";
-import ActivityType from "../components/ActivityType";
+import Button from "../Components/Button";
+import Activity from "../Components/Activity";
+import ActivityType from "../Components/ActivityType";
 
 import "./styles.css";
 
