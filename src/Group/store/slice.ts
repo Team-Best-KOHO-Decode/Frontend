@@ -20,7 +20,7 @@ export const groupSlice = createSlice({
   initialState,
   reducers: {
     updateGroupName: (state, action: PayloadAction<string>) => {
-      state.name = action.payload;
+      state.group_name = action.payload;
     },
     requestPostGroup: (state) => {
       state.loading = true;

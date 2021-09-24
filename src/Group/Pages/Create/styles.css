@@ -25,6 +25,14 @@
   justify-content: center;
 }
 
+.create-page-group-name {
+  text-align: left;
+}
+
+.create-page-input {
+  text-align: left;
+}
+
 .footer {
   padding-top: 24px;
   padding-bottom: 24px;
