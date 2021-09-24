@@ -1,4 +1,4 @@
-import React from 'react'; 
+import React from "react";
 import "./styles.css";
 
 interface Props {
@@ -6,14 +6,8 @@ interface Props {
 }
 
 function Button(props: Props) {
-  const {
-    text,
-  } = props;
-  return (
-    <button className="button">
-      {text}
-    </button>
-  );
+  const { text } = props;
+  return <button className="button">{text}</button>;
 }
 
 export default Button;
