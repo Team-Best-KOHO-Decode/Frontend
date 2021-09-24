@@ -1,0 +1,36 @@
+.invite-page {
+  display: grid;
+}
+
+.invite-page-avatars {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  justify-content: center;
+}
+
+.invite-page-plus {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.invite-page-plus-icon {
+  border-radius: 50%;
+  background-color: #fbd9d5;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
