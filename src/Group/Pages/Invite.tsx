@@ -2,6 +2,7 @@ import { ParagraphLarge, TitleLarge } from "../../Components/Typography";
 import { Avatar } from "../../Components/Avatar";
 import Button from "../../Components/Button";
 import { ReactComponent as PlusIcon } from "../../assets/icons/plus.svg";
+import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 
 import "./styles.css";
 
@@ -30,6 +31,9 @@ export const InvitePage = () => {
         </div>
       </div>
       <Button color="tertiary" text="Done" />
+      <div className="footer">
+        <Logo />
+      </div>
     </div>
   );
 };
