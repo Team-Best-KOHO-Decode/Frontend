@@ -11,9 +11,9 @@ const App = () => {
     <div className="App">
       <Router>
         <ul>
-          <Link to="/dashboard">Dashboard</Link>
-          <Link to="/group/invite">Invite</Link>
-          <Link to="/activity">Activity</Link>
+          <Link to="/dashboard">Dashboard | </Link>
+          <Link to="/group/invite">Invite | </Link>
+          <Link to="/activity">Activity | </Link>
           <Link to="/topvote">Top Vote</Link>
         </ul>
         <Switch>
