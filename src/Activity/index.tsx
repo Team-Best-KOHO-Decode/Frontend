@@ -1,6 +1,7 @@
 import Button from "../Components/Button";
 import Activity from "../Components/ActivityCard";
 import ActivityType from "../Components/ActivityType";
+import { useHistory } from "react-router-dom";
 
 import "./styles.css";
 import { useEffect, useState } from "react";
@@ -8,6 +9,7 @@ import axios from "axios";
 
 function ActivityPage() {
   const activityTypes = ["Food", "Entertainment", "Sports"];
+  const history = useHistory();
   // const activities = [
   //   {
   //     name: "Mario's",
@@ -26,6 +28,9 @@ function ActivityPage() {
   //   },
   // ];
   const [activities, setActivities] = useState([]);
+  const onClick = () => {
+    history.push("/topvote");
+  };
 
   useEffect(() => {
     axios
@@ -68,7 +73,7 @@ function ActivityPage() {
           }
         )}
       </div>
-      <Button text="Submit" color="primary" />
+      <Button text="Submit" color="primary" onClick={onClick} />
     </div>
   );
 }
