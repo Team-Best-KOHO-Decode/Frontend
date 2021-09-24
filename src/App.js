@@ -31,14 +31,14 @@ const App = () => {
           <Route path="/group/invite">
             <InvitePage />
           </Route>
+          <Route path="/group/:id">
+            <GroupPlanSummaryPage />
+          </Route>
           <Route path="/activity">
             <Activity />
           </Route>
           <Route path="/topvote">
             <TopVotePage />
-          </Route>
-          <Route path="/plans">
-            <GroupPlanSummaryPage />
           </Route>
         </Switch>
       </Router>
