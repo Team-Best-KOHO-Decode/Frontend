@@ -2,16 +2,20 @@ import "./styles.css";
 import Header from "../Components/Header";
 import Button from "../Components/Button";
 import Subtitle from "../Components/Subtitle";
+import React, { useState } from "react";
 
 function Setup() {
+  const [rating, setRating] = useState(0);
+  const [hover, setHover] = useState(0);
+
   const intro = (
     <div>
       <Header
         title="Create a Plan"
         subtitle="Choose a time, location and activity to vote on"
       />
-      <div>
-        <p>put the image here</p>
+      <div className="items-center">
+        <img className="img"></img>
       </div>
       <Button text="GOT IT" color="primary" />
     </div>
@@ -21,8 +25,28 @@ function Setup() {
     <div>
       <Header title="Choose a Budget" subtitle="Select a Price Range" />
       <div>
-        <p>put the image here</p>
+        <Subtitle text="Price" />
+        <div className="star-rating">
+          {[...Array(4)].map((star, index) => {
+            index += 1;
+            return (
+              <button
+                type="button"
+                key={index}
+                className={index <= (hover || rating) ? "on" : "off"}
+                onClick={() => setRating(index)}
+                onMouseEnter={() => setHover(index)}
+                onMouseLeave={() => setHover(rating)}
+              >
+                <p className="dollar-sign">$</p>
+              </button>
+            );
+          })}
+        </div>
+        <Subtitle text="Edit Amount" />
+        <input type="number"></input>
       </div>
+
       <Button text="NEXT" color="primary" />
     </div>
   );
@@ -31,14 +55,14 @@ function Setup() {
     <div>
       <Header title="Create a Time" subtitle="Select a time to hangout!" />
       <div>
-        <Subtitle text="" />
-        <p>put the image here</p>
+        <Subtitle text="Time" />
+        <Subtitle text="Date" />
       </div>
       <Button text="NEXT" color="primary" />
     </div>
   );
 
-  return intro;
+  return time;
 }
 
 export default Setup;
