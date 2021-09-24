@@ -69,7 +69,7 @@ function Setup() {
     </div>
   );
 
-  return time;
+  return <div className="root">{intro}</div>;
 }
 
 export default Setup;
