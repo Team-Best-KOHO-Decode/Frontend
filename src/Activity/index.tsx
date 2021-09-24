@@ -48,19 +48,24 @@ function ActivityPage() {
           <ActivityType type={type} />
         ))}
       </div>
+
       <div className="activitesList">
-        {(activity: {
-          name: string;
-          description: string;
-          cost: string;
-          image: string;
-        }) => (
-          <Activity
-            name={activity.name}
-            type={activity.description}
-            price={activity.cost}
-            imgUrl={activity.image}
-          />
+        {activities.map(
+          (activity: {
+            name: string;
+            description: string;
+            cost: string;
+            image: string;
+          }) => {
+            return (
+              <Activity
+                name={activity.name}
+                type={activity.description}
+                price={activity.cost}
+                imgUrl={activity.image}
+              />
+            );
+          }
         )}
       </div>
       <Button text="Submit" color="primary" />
