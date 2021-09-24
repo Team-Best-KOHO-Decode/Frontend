@@ -7,7 +7,13 @@ function TopVotePage() {
   return (
     <div className="root">
       <p className="title">Top Vote</p>
-      <Activity name="Mario's" type="Italian" price="$$" showVote={false} />
+      <Activity
+        name="Mario's"
+        type="Italian"
+        price="$$"
+        showVote={false}
+        imgUrl=""
+      />
       <div className="subActivities">
         <SubActivity name="Subway" voteCount="5" />
         <SubActivity name="Bowling" voteCount="3" />
