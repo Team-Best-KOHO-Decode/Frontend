@@ -12,6 +12,7 @@
   width: 150px;
   background: lightblue;
   position: relative;
+  border-radius: 20px 20px 0px 0px;
 }
 
 .activityTitle {
@@ -23,6 +24,7 @@
   background: #FFFFFF;
   font-size: 18px;
   text-align: center;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .votes {
