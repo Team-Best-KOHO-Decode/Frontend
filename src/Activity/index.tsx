@@ -54,6 +54,7 @@ function ActivityPage() {
             name={activity.name}
             type={activity.description}
             price={activity.cost}
+            imgUrl={activity.image}
           />
         ))}
       </div>

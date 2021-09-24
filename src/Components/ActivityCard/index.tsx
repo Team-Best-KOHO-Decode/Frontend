@@ -11,7 +11,7 @@ interface Props {
 }
 
 function Activity(props: Props) {
-  const { name, type, price, showVote = true } = props;
+  const { name, type, price, showVote, imgUrl = true } = props;
   const [vote, setVote] = useState(false);
 
   const HandlePrice = ["$", "$$", "$$$", "$$$$"];
@@ -20,7 +20,7 @@ function Activity(props: Props) {
     <div className="card">
       <div className="content">
         {/* <div className="img"></div> */}
-        <img src="imgUrl" className="img" alt="" />
+        <img src={imgUrl} className="img" alt="" />
         <div className="info">
           <p className="title">{name}</p>
           <p className="subText">{type}</p>
