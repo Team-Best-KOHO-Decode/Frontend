@@ -59,9 +59,13 @@ function Setup() {
       <Header title="Create a Time" subtitle="Select a time to hangout!" />
       <div>
         <Subtitle text="Time" />
-        <input type="time" />
+
+        <div className="center">
+          <input type="time" />
+        </div>
         <Subtitle text="Date" />
-        <div>
+
+        <div className="center">
           <input type="date" />
         </div>
       </div>
@@ -69,7 +73,7 @@ function Setup() {
     </div>
   );
 
-  return <div className="root">{intro}</div>;
+  return <div className="root">{time}</div>;
 }
 
 export default Setup;

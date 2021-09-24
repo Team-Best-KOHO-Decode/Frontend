@@ -9,7 +9,7 @@ interface Props {
 function Header(props: Props) {
   const { title, subtitle } = props;
   return (
-    <div>
+    <div className="center">
       <h1 className="title">{title}</h1>
       <p className="">{subtitle}</p>
     </div>
