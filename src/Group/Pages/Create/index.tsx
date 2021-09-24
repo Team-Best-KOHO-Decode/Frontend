@@ -18,7 +18,7 @@ export const CreatePage = () => {
   const dispatch = useDispatch();
   const groupName = useSelector(selectGroupName);
   const history = useHistory();
-  const onChange = (e) => {
+  const onChange = (e: any) => {
     dispatch(groupSlice.actions.updateGroupName(e.target.value));
   };
 
@@ -39,8 +39,7 @@ export const CreatePage = () => {
       );
 
       history.push("/group/invite");
-    } catch (error) {
-      console.log(error);
+    } catch {
       dispatch(groupSlice.actions.errorPostGroup());
     }
   };
