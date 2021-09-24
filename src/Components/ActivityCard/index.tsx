@@ -20,7 +20,7 @@ function Activity(props: Props) {
     <div className="card">
       <div className="content">
         {/* <div className="img"></div> */}
-        <img url="imgUrl" className="img" alt="" />
+        <img src="imgUrl" className="img" alt="" />
         <div className="info">
           <p className="title">{name}</p>
           <p className="subText">{type}</p>
