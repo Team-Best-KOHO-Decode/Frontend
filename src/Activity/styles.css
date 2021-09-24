@@ -1,0 +1,31 @@
+.root {
+  background: #F1F5F8;
+  min-height: 100vh;
+}
+
+.info {
+  text-align: left;
+  color: #373E4D;
+  padding: 18px;
+  margin: 0;
+}
+
+.info p {
+  margin: 0;
+}
+
+.info p:first-of-type {
+  color: #000000;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.activitesList {
+  display: grid;
+  grid-row-gap: 18px;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  padding: 0 18px;
+  margin-bottom: 28px;
+}

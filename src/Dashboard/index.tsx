@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "../Components/Button";
-import Activity from "../Components/Activity";
+import Button from "../components/Button";
+import Activity from "../components/Activity";
 
 function DashboardPage() {
   return (

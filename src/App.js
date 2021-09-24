@@ -1,17 +1,17 @@
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Dashboard from "./Dashboard";
+import Activity from "./Activity";
 
 const App = () => {
   return (
     <div className="App">
       <Router>
         <ul>
-          <Link to="/dashboard">Dashboard</Link>
+          <Link to="/activity">Activity</Link>
         </ul>
         <Switch>
-          <Route path="/dashboard">
-            <Dashboard />
+          <Route path="/activity">
+            <Activity />
           </Route>
         </Switch>
       </Router>
