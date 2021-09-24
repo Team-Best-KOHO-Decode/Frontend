@@ -3,7 +3,9 @@ import Dashboard from "./Dashboard";
 import "./App.css";
 import Activity from "./Activity";
 import TopVotePage from "./TopVote";
-import Setup from "./Setup";
+import CreatePlan from "./CreatePlan";
+import ChooseBudget from "./ChooseBudget";
+import ChooseTime from "./ChooseTime";
 import GroupPlanSummaryPage from "./GroupPlanSummary";
 import { ReactComponent as Logo } from "./assets/icons/logo.svg";
 
@@ -17,14 +19,22 @@ const App = () => {
           <Link to="/activity">Activity | </Link>
           <Link to="/topvote">Top Vote | </Link>
           <Link to="/plans">Plans | </Link>
-          <Link to="/setup">Setup</Link>
+          <Link to="/createplan">Create Plan | </Link>
+          <Link to="/choosebudget">Choose Budget | </Link>
+          <Link to="/choosetime">Choose Time</Link>
         </ul>
         <div className="header">
           <Logo />
         </div>
         <Switch>
-          <Route path="/setup">
-            <Setup />
+          <Route path="/createplan">
+            <CreatePlan />
+          </Route>
+          <Route path="/choosebudget">
+            <ChooseBudget />
+          </Route>
+          <Route path="/choosetime">
+            <ChooseTime />
           </Route>
           <Route path="/dashboard">
             <Dashboard />
