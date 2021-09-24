@@ -49,14 +49,19 @@ function ActivityPage() {
         ))}
       </div>
       <div className="activitesList">
-        {activities.map((activity) => (
+        {(activity: {
+          name: string;
+          description: string;
+          cost: string;
+          image: string;
+        }) => (
           <Activity
             name={activity.name}
             type={activity.description}
             price={activity.cost}
             imgUrl={activity.image}
           />
-        ))}
+        )}
       </div>
       <Button text="Submit" color="primary" />
     </div>
