@@ -29,7 +29,7 @@ export const InvitePage = () => {
           </div>
         </div>
       </div>
-      <Button color="secondary" text="Done" />
+      <Button color="tertiary" text="Done" />
     </div>
   );
 };
