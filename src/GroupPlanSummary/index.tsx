@@ -7,6 +7,7 @@ import Button from "../Components/Button";
 import ActivitySummary from "../Components/ActivitySummary";
 import { selectGroupName, selectGroupLoading } from "../Group/store/selectors";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 function GroupPlanSummaryPage() {
   const dispatch = useDispatch();
@@ -48,7 +49,9 @@ function GroupPlanSummaryPage() {
       />
       <div className="group-summary-buttons">
         <Button text="Edit Plan" color="secondary" />
-        <Button text="Create New Plan" color="primary" />
+        <Link to="/createplan" className="nostyle">
+          <Button text="Create New Plan" color="primary" />
+        </Link>
       </div>
     </div>
   );
